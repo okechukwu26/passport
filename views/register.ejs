@@ -1,0 +1,58 @@
+<div class="row mt-5">
+  <div class="col-8 col-md-6 mx-auto">
+    <div class="card card-body">
+      <h1 class="text-capitalize font-weight-bold text-center">
+        <span class="text-center mb-0"><i class="fa fa-user-plus"></i></span>
+        register
+      </h1>
+      <%- include ("./partials/messages") %>
+
+      <form action="/users/register" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="name"
+            name="name"
+            placeholder="Enter Full Name"
+            id="name"
+            class="form-control mb-2"
+            value="<%= typeof name !='undefined'? name : ''%>"
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Email"
+            class="form-control mb-2"
+            value="<%= typeof email !='undefined'? email : ''%>"
+          />
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Create Password"
+            class="form-control mb-2"
+            value="<%= typeof password !='undefined'? password : ''%>"
+          />
+          <label for="confirm password">Confirm Password</label>
+          <input
+            type="password"
+            name="password2"
+            id="confirm password"
+            placeholder=" Confirm Password"
+            class="form-control mb-2"
+            value="<%= typeof password2 !='undefined'? password2 : ''%>"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          register
+        </button>
+      </form>
+      <p class="mt-2 lead text-capitalize font-weight-bold">
+        Have an acount? <a href="/users/login" class="primary">login</a>
+      </p>
+    </div>
+  </div>
+</div>
